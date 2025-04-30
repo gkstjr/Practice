@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
+
+payment:
+  secret-key: test_gsk_docs_OaPz8L5KdmQXkzRz3y47BMw6
+  base-url: https://api.tosspayments.com/v1/payments
+  confirm-endpoint: /confirm
